@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zfw-u0-HPH">
-                                <rect key="frame" x="30" y="277" width="330" height="290"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zfw-u0-HPH">
+                                <rect key="frame" x="30" y="265" width="330" height="314.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8cfb76c8af04b72de1096c55862ae518" translatesAutoresizingMaskIntoConstraints="NO" id="Aum-DK-TCZ">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="128"/>
@@ -25,34 +25,41 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Почта или телефон" textAlignment="natural" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="yNt-z2-Kcq">
-                                        <rect key="frame" x="0.0" y="136" width="330" height="34"/>
+                                        <rect key="frame" x="0.0" y="143" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="vY0-W6-6E5">
-                                        <rect key="frame" x="0.0" y="178" width="330" height="34"/>
+                                        <rect key="frame" x="0.0" y="192" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psG-5o-muG">
-                                        <rect key="frame" x="0.0" y="220" width="330" height="31"/>
+                                        <rect key="frame" x="0.0" y="241" width="330" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Войти"/>
+                                        <connections>
+                                            <action selector="LoginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="VsT-My-8Df"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-Cz-rXM">
-                                        <rect key="frame" x="0.0" y="259" width="330" height="31"/>
+                                        <rect key="frame" x="0.0" y="287" width="330" height="27.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcq-vu-b6Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="110.33333333333333" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="27.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Регистрация"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Регистрация">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                                </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvt-N7-SFP">
-                                                <rect key="frame" x="196.66666666666663" y="0.0" width="133.33333333333337" height="31"/>
+                                                <rect key="frame" x="224.66666666666666" y="0.0" width="105.33333333333334" height="27.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Забыли пароль?"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Забыли пароль?">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -67,6 +74,10 @@
                             <constraint firstItem="zfw-u0-HPH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hCz-TE-ycq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="login" destination="8bC-Xf-vdC" id="nFc-iA-1p1"/>
+                        <outlet property="password" destination="vY0-W6-6E5" id="d6K-yc-7lX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
