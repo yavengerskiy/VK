@@ -9,17 +9,11 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    
-    let testData = ["test1", "test2", "test3", "test4"]
+    var currentUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = 100
     }
 
     // MARK: - Table view data source
@@ -29,22 +23,37 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        testData.count
+        currentUser.friendsList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
-            
-            var content = cell.defaultContentConfiguration()
-            content.text = testData[indexPath.row]
-            cell.contentConfiguration = content
-            
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = currentUser.friendsList[indexPath.row].name
+        content.image = image(UIImage(named: currentUser.friendsList[indexPath.row].photos.first!)!, withSize: CGSize(width: 80, height: 80))
+        content.imageProperties.cornerRadius = tableView.rowHeight / 2
+        cell.contentConfiguration = content
+        
+        return cell
+    }
     
-   
+    func image( _ image:UIImage, withSize newSize:CGSize) -> UIImage {
+
+        UIGraphicsBeginImageContext(newSize)
+        image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!.withRenderingMode(.automatic)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let photosVC = segue.destination as? PhotosCollectionViewController else { return }
+            let photoList = currentUser.friendsList[indexPath.row].photos
+            photosVC.photoList = photoList
+        }
 
     /*
     // Override to support conditional editing of the table view.
