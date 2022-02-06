@@ -25,7 +25,7 @@ class DataManager {
         usersList.append(user4)
         let user5 = User(login: "Depp", name: "Джонни Депп", password: "", photos: ["pitt", "pitt2", "pitt3", "pitt4"], groups: [], friendsList: [])
         usersList.append(user5)
-        usersList.append(User(login: "User", name: "User", password: "123456", photos: [], groups: [], friendsList: [user1, user2, user3, user4, user5]))
+        usersList.append(User(login: "User", name: "User", password: "123456", photos: ["timoti"], groups: [], friendsList: [user1, user2, user3, user4, user5]))
         
         return usersList
     }

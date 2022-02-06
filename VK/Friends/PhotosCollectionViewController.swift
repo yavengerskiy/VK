@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "PhotosCollectionViewCell"
+private let reuseIdentifier = "collectionCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     

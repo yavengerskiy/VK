@@ -95,16 +95,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="baQ-09-yGw" customClass="AlphabetUiControl" customModule="VK" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" id="cLZ-Oe-6K4">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="88.666666030883789" width="390" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cLZ-Oe-6K4" id="K6p-oO-bhv">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hpC-fR-n7o" kind="show" id="r4P-rr-gNA"/>
+                                    <segue destination="hpC-fR-n7o" kind="show" identifier="toFriendsPhotos" id="r4P-rr-gNA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -128,7 +133,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VRb-b2-Rhv">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4oV-sF-mTo">
                             <size key="itemSize" width="200" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -142,6 +147,19 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="890-D1-9gg">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcI-8m-DCw" customClass="LikeControl" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="164" width="200" height="36"/>
+                                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.090181745588779449" green="0.44188141822814941" blue="0.10739747434854507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="JcI-8m-DCw" secondAttribute="bottom" id="75f-m0-hiA"/>
+                                        <constraint firstItem="JcI-8m-DCw" firstAttribute="centerX" secondItem="890-D1-9gg" secondAttribute="centerX" id="ddm-bP-htU"/>
+                                        <constraint firstItem="JcI-8m-DCw" firstAttribute="top" secondItem="890-D1-9gg" secondAttribute="top" constant="164" id="f70-VZ-Pzh"/>
+                                        <constraint firstItem="JcI-8m-DCw" firstAttribute="leading" secondItem="890-D1-9gg" secondAttribute="leading" id="tXM-4o-g5E"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="200" height="200"/>
                             </collectionViewCell>
@@ -155,7 +173,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU9-d1-rlV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3527" y="-276"/>
+            <point key="canvasLocation" x="3526.1538461538462" y="-276.54028436018956"/>
         </scene>
         <!--title-->
         <scene sceneID="X53-oE-fIx">
@@ -175,6 +193,7 @@
                     <connections>
                         <segue destination="uAQ-zH-QKH" kind="relationship" relationship="viewControllers" id="BkS-do-unM"/>
                         <segue destination="jND-Ct-hDe" kind="relationship" relationship="viewControllers" id="Z3f-FB-P3z"/>
+                        <segue destination="fwe-zH-KMB" kind="relationship" relationship="viewControllers" id="d46-5Y-dD7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehH-aN-H9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -217,6 +236,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqQ-do-l5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2531" y="444"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="6kf-YU-fbk">
+            <objects>
+                <viewController id="fwe-zH-KMB" customClass="ProfileViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yu5-D3-CWK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-Hc-ePl" customClass="ProfilePhotoShadow" customModule="VK" customModuleProvider="target">
+                                <rect key="frame" x="75" y="75" width="240" height="240"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timoti" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-kR-Hmx">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CVJ-kR-Hmx" secondAttribute="height" multiplier="1:1" id="uj1-l8-UY7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CVJ-kR-Hmx" secondAttribute="bottom" id="2sy-88-Nqh"/>
+                                    <constraint firstItem="CVJ-kR-Hmx" firstAttribute="leading" secondItem="Qcb-Hc-ePl" secondAttribute="leading" id="AJl-6J-zam"/>
+                                    <constraint firstAttribute="width" constant="240" id="X7M-vf-CoZ"/>
+                                    <constraint firstItem="CVJ-kR-Hmx" firstAttribute="top" secondItem="Qcb-Hc-ePl" secondAttribute="top" id="khA-1v-fWI"/>
+                                    <constraint firstAttribute="width" secondItem="Qcb-Hc-ePl" secondAttribute="height" multiplier="1:1" id="m1k-UN-IDt"/>
+                                    <constraint firstAttribute="trailing" secondItem="CVJ-kR-Hmx" secondAttribute="trailing" id="pIU-zy-ng8"/>
+                                    <constraint firstAttribute="height" constant="240" id="tzB-JJ-XLh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="120"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="edb-Ap-BY7">
+                                <rect key="frame" x="139.66666666666666" y="379.66666666666669" width="110.66666666666666" height="30.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvv-dk-3Jx">
+                                        <rect key="frame" x="0.0" y="0.0" width="45.333333333333336" height="30.666666666666668"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="didPressedLikeButton:" destination="fwe-zH-KMB" eventType="touchUpInside" id="2H4-Ro-D60"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pz-KI-T1M">
+                                        <rect key="frame" x="65.333333333333343" y="5.3333333333333144" width="45.333333333333343" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8d5-ln-dPM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="edb-Ap-BY7" firstAttribute="centerX" secondItem="yu5-D3-CWK" secondAttribute="centerX" id="Eq2-JJ-jsG"/>
+                            <constraint firstItem="Qcb-Hc-ePl" firstAttribute="top" secondItem="8d5-ln-dPM" secondAttribute="top" constant="75" id="Ukf-fF-zIF"/>
+                            <constraint firstItem="edb-Ap-BY7" firstAttribute="centerY" secondItem="yu5-D3-CWK" secondAttribute="centerY" id="gRK-2i-ts5"/>
+                            <constraint firstItem="Qcb-Hc-ePl" firstAttribute="centerX" secondItem="yu5-D3-CWK" secondAttribute="centerX" id="pvN-99-PXX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="rAP-b8-u5d"/>
+                    <connections>
+                        <outlet property="likeBUtton" destination="Pvv-dk-3Jx" id="gUB-uQ-glg"/>
+                        <outlet property="likeCounterLabel" destination="9Pz-KI-T1M" id="Vjn-Lm-az3"/>
+                        <outlet property="photiImageView" destination="CVJ-kR-Hmx" id="yRF-M8-24S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyZ-sk-zTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="-596.44549763033172"/>
         </scene>
         <!--Item-->
         <scene sceneID="CJp-1y-7ik">
@@ -290,9 +396,18 @@
     <resources>
         <image name="8cfb76c8af04b72de1096c55862ae518" width="2880" height="2294"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="timoti" width="800" height="1087"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

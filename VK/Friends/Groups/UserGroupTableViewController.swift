@@ -48,7 +48,17 @@ class UserGroupTableViewController: UITableViewController {
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            self.currentUser.groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let targetVC = segue.destination as? AllGroupListTableViewController else { return }
         targetVC.userGroupList = currentUser.groups
