@@ -14,6 +14,7 @@ class FriendsTableViewController: UITableViewController {
     private var namesListModifed: [String] = []
     private var letersOfNames: [String] = []
     
+    
     var currentUser: User!
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -39,10 +40,7 @@ class FriendsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? FriendsListTableViewCell else { return UITableViewCell() }
-
-        cell.titleLabel.text = getNameFriendForCell(indexPath)
-        cell.avatarImageView.image = UIImage(named: getAvatarFriendForCell(indexPath))
-        
+        cell.setDataForCell(user: getUserforCell(indexPath))
         return cell
     }
     
@@ -50,7 +48,7 @@ class FriendsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             guard let photosVC = segue.destination as? PhotosCollectionViewController else { return }
-            let photoList = currentUser.friendsList[indexPath.row].photos
+            let photoList = getUserforCell(indexPath).photos
             photosVC.photoList = photoList
         }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,27 +84,16 @@ extension FriendsTableViewController: UISearchBarDelegate {
             letersOfNames.append(String(leter))
         }
     }
-    func getNameFriendForCell(_ indexPath: IndexPath) -> String {
-        var namesRows = [String]()
-        for name in namesListModifed.sorted() {
-            if letersOfNames[indexPath.section].contains(name.first!) {
-                namesRows.append(name)
+    func getUserforCell(_ indexPath: IndexPath) -> User {
+        var usersForSection: [User] = []
+        for user in  currentUser.friendsList {
+            if letersOfNames[indexPath.section].contains(user.name.first!) {
+                usersForSection.append(user)
             }
         }
-        return namesRows[indexPath.row]
+        return usersForSection[indexPath.row]
     }
-    
-    func getAvatarFriendForCell(_ indexPath: IndexPath) -> String {
-        for friend in currentUser.friendsList {
-            let namesRows = getNameFriendForCell(indexPath)
-            if friend.name.contains(namesRows) {
-                return friend.photos.first ?? ""
-            }
-        }
-        return ""
-    }
-    
-    
+
     // MARK: - searchBar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         namesListModifed = searchText.isEmpty ? namesListFixed : namesListFixed.filter { (item: String) -> Bool in

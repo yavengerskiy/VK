@@ -17,13 +17,13 @@ class DataManager {
         
         let user1 = User(login: "Durov", name: "Павел Дуров", password: "", photos: ["durov", "durov2", "durov3", "durov4"], groups: [], friendsList: [])
         usersList.append(user1)
-        let user2 = User(login: "Angelina", name: "Анджелина Джоли", password: "", photos: ["angelina", "angelina2", "angelina3", "angelina4"], groups: [], friendsList: [])
+        let user2 = User(login: "Angelina", name: "Анджелина Джоли", password: "", photos: ["angelina"], groups: [], friendsList: [])
         usersList.append(user2)
         let user3 = User(login: "Anne", name: "Энн Хэтэуэй", password: "", photos: ["anne4", "anne2", "anne3", "anne"], groups: [], friendsList: [])
         usersList.append(user3)
-        let user4 = User(login: "Tom", name: "Том Круз", password: "", photos: ["tom", "tom2", "tom3", "tom4"], groups: [], friendsList: [])
+        let user4 = User(login: "Tom", name: "Том Круз", password: "", photos: ["tom"], groups: [], friendsList: [])
         usersList.append(user4)
-        let user5 = User(login: "Depp", name: "Джонни Депп", password: "", photos: ["pitt", "pitt2", "pitt3", "pitt4"], groups: [], friendsList: [])
+        let user5 = User(login: "Depp", name: "Джонни Депп", password: "", photos: ["pitt"], groups: [], friendsList: [])
         usersList.append(user5)
         usersList.append(User(login: "User", name: "User", password: "123456", photos: ["timoti"], groups: [], friendsList: [user1, user2, user3, user4, user5]))
         
