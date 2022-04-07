@@ -8,6 +8,8 @@
 import Foundation
 
 struct User {
+    var userId: Int
+    var token: String
     let login: String
     let name: String
     var password: String
