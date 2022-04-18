@@ -15,54 +15,42 @@ class DataManager {
     func createTempUsers() -> [User] {
         var usersList:[User] = []
         
-        let user1 = User(userId: 123,
-                         token: "User1",
-                         login: "Durov",
+        let user1 = User(login: "Durov",
                          name: "Павел Дуров",
                          password: "",
                          photos: ["durov", "durov2", "durov3", "durov4"],
                          groups: [],
                          friendsList: [])
         usersList.append(user1)
-        let user2 = User(userId: 124,
-                         token: "User2",
-                         login: "Angelina",
+        let user2 = User(login: "Angelina",
                          name: "Анджелина Джоли",
                          password: "",
                          photos: ["angelina"],
                          groups: [],
                          friendsList: [])
         usersList.append(user2)
-        let user3 = User(userId: 125,
-                         token: "User3",
-                         login: "Anne",
+        let user3 = User(login: "Anne",
                          name: "Энн Хэтэуэй",
                          password: "",
                          photos: ["anne4", "anne2", "anne3", "anne"],
                          groups: [],
                          friendsList: [])
         usersList.append(user3)
-        let user4 = User(userId: 126,
-                         token: "User4",
-                         login: "Tom",
+        let user4 = User(login: "Tom",
                          name: "Том Круз",
                          password: "",
                          photos: ["tom"],
                          groups: [],
                          friendsList: [])
         usersList.append(user4)
-        let user5 = User(userId: 127,
-                         token: "User5",
-                         login: "Depp",
+        let user5 = User(login: "Depp",
                          name: "Джонни Депп",
                          password: "",
                          photos: ["pitt"],
                          groups: [],
                          friendsList: [])
         usersList.append(user5)
-        usersList.append(User(userId: 128,
-                              token: "User",
-                              login: "User",
+        usersList.append(User(login: "User",
                               name: "User",
                               password: "123456",
                               photos: ["timoti"],
@@ -74,9 +62,7 @@ class DataManager {
     
     func createTempGroups() -> [Group] {
         var groupsList:[Group] = []
-        let user = User(userId: 128,
-                        token: "User",
-                        login: "testuser",
+        let user = User(login: "testuser",
                         name: "User",
                         password: "123456",
                         photos: [],
@@ -92,12 +78,8 @@ class DataManager {
     }
     
     func createTestNews() -> [PostNews] {
-        let user1 = User(userId: 128,
-                         token: "User3",
-                         login: "Angelina", name: "Анджелина Джоли", password: "", photos: ["angelina", "angelina2", "angelina3", "angelina4"], groups: [], friendsList: [])
-        let user2 = User(userId: 128,
-                         token: "User3",
-                         login: "Anne", name: "Энн Хэтэуэй", password: "", photos: ["anne4", "anne2", "anne3", "anne"], groups: [], friendsList: [])
+        let user1 = User(login: "Angelina", name: "Анджелина Джоли", password: "", photos: ["angelina", "angelina2", "angelina3", "angelina4"], groups: [], friendsList: [])
+        let user2 = User(login: "Anne", name: "Энн Хэтэуэй", password: "", photos: ["anne4", "anne2", "anne3", "anne"], groups: [], friendsList: [])
         var postNewsList:[PostNews] = []
         let postNew1 = PostNews(creator: user1,
                                 date: "34 минуты назад",

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zfw-u0-HPH">
-                                <rect key="frame" x="30" y="265" width="330" height="314.33333333333326"/>
+                                <rect key="frame" x="30" y="241.99999999999997" width="330" height="360.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8cfb76c8af04b72de1096c55862ae518" translatesAutoresizingMaskIntoConstraints="NO" id="Aum-DK-TCZ">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="128"/>
@@ -42,11 +42,19 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Войти"/>
                                         <connections>
                                             <action selector="didLoginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wiH-Er-zrh"/>
-                                            <segue destination="etE-Ed-4z2" kind="show" id="maK-C1-EcJ"/>
+                                            <segue destination="etE-Ed-4z2" kind="show" identifier="login" id="maK-C1-EcJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-9t-Foh">
+                                        <rect key="frame" x="0.0" y="287" width="330" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Войти через VK"/>
+                                        <connections>
+                                            <segue destination="ajc-yp-1jV" kind="show" id="c20-uZ-J77"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-Cz-rXM">
-                                        <rect key="frame" x="0.0" y="287" width="330" height="27.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="333" width="330" height="27.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcq-vu-b6Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="27.333333333333332"/>
@@ -69,7 +77,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-2y-iu0" customClass="LoadingView" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="155" y="587" width="80" height="20"/>
+                                <rect key="frame" x="155" y="660" width="80" height="20"/>
                                 <color key="backgroundColor" red="0.28627452250000002" green="0.42745098469999998" blue="0.55294120309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="7PM-hI-s5j"/>
@@ -82,7 +90,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zfw-u0-HPH" secondAttribute="trailing" constant="30" id="9uW-Bw-Ivt"/>
                             <constraint firstItem="zfw-u0-HPH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="VEn-fS-zzr"/>
-                            <constraint firstItem="0EM-2y-iu0" firstAttribute="top" secondItem="MeD-Cz-rXM" secondAttribute="bottom" constant="7.6666666666667425" id="gYg-yt-gc6"/>
+                            <constraint firstItem="0EM-2y-iu0" firstAttribute="top" secondItem="MeD-Cz-rXM" secondAttribute="bottom" constant="57.666666666666742" id="gYg-yt-gc6"/>
                             <constraint firstItem="0EM-2y-iu0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hBB-st-hmo"/>
                             <constraint firstItem="zfw-u0-HPH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hCz-TE-ycq"/>
                         </constraints>
@@ -272,6 +280,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpn-Ui-zBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1724.6153846153845" y="-289.33649289099526"/>
+        </scene>
+        <!--AuthVK View Controller-->
+        <scene sceneID="04k-ZV-Xb8">
+            <objects>
+                <viewController id="ajc-yp-1jV" customClass="AuthVKViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SB5-5K-NRa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-Vi-1X7">
+                                <rect key="frame" x="0.0" y="44" width="390" height="746"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J2y-YZ-UrR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="J2y-YZ-UrR" firstAttribute="bottom" secondItem="1qB-Vi-1X7" secondAttribute="bottom" id="9ll-Kg-f88"/>
+                            <constraint firstItem="1qB-Vi-1X7" firstAttribute="leading" secondItem="J2y-YZ-UrR" secondAttribute="leading" id="SGt-OE-2Jt"/>
+                            <constraint firstItem="J2y-YZ-UrR" firstAttribute="trailing" secondItem="1qB-Vi-1X7" secondAttribute="trailing" id="YYx-Mq-jfw"/>
+                            <constraint firstItem="1qB-Vi-1X7" firstAttribute="top" secondItem="J2y-YZ-UrR" secondAttribute="top" id="eoR-nr-NKn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="THt-LX-u4y"/>
+                    <connections>
+                        <outlet property="webView" destination="1qB-Vi-1X7" id="zjc-Fa-UmZ"/>
+                        <segue destination="etE-Ed-4z2" kind="show" identifier="loginVK" id="gnZ-G3-D2N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qe-I2-fGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="831"/>
         </scene>
         <!--News-->
         <scene sceneID="ugT-ML-R9e">
@@ -472,6 +516,9 @@
             <point key="canvasLocation" x="3455" y="444"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gnZ-G3-D2N"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="8cfb76c8af04b72de1096c55862ae518" width="2880" height="2294"/>
         <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="106"/>

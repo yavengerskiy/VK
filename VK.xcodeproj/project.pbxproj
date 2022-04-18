@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16000668280C3F2D00CE39F6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16000667280C3F2D00CE39F6 /* Session.swift */; };
+		1600066A280C491100CE39F6 /* AuthVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16000669280C491100CE39F6 /* AuthVKViewController.swift */; };
+		1600066D280DC33900CE39F6 /* GetDataFromVKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600066C280DC33900CE39F6 /* GetDataFromVKApi.swift */; };
 		160537CE279DB8F900AC37BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160537CD279DB8F900AC37BE /* User.swift */; };
 		160537D0279DB90A00AC37BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160537CF279DB90A00AC37BE /* Group.swift */; };
 		160537D6279EBD1A00AC37BE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160537D5279EBD1A00AC37BE /* DataManager.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16000667280C3F2D00CE39F6 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		16000669280C491100CE39F6 /* AuthVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVKViewController.swift; sourceTree = "<group>"; };
+		1600066C280DC33900CE39F6 /* GetDataFromVKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFromVKApi.swift; sourceTree = "<group>"; };
 		160537CD279DB8F900AC37BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		160537CF279DB90A00AC37BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		160537D5279EBD1A00AC37BE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -79,10 +85,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1600066B280DC30D00CE39F6 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				1600066C280DC33900CE39F6 /* GetDataFromVKApi.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		160537D3279EBC6A00AC37BE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				160537D5279EBD1A00AC37BE /* DataManager.swift */,
+				16000669280C491100CE39F6 /* AuthVKViewController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -93,6 +108,7 @@
 				160537CD279DB8F900AC37BE /* User.swift */,
 				160537CF279DB90A00AC37BE /* Group.swift */,
 				164175B127AFB87B002C62A8 /* PostNews.swift */,
+				16000667280C3F2D00CE39F6 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +184,7 @@
 		16BEB5F9278365DB00DD085E /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				1600066B280DC30D00CE39F6 /* NetworkManager */,
 				164175B327AFB8CC002C62A8 /* News */,
 				160537DF27A0524B00AC37BE /* Friends */,
 				160537D4279EBC7C00AC37BE /* Models */,
@@ -262,10 +279,12 @@
 				160C312427A701E2002B24E2 /* AlphabetUiControl.swift in Sources */,
 				16BEB5FF278365DB00DD085E /* LoginViewController.swift in Sources */,
 				1677464227A7E6FC00C88929 /* LikeControl.swift in Sources */,
+				1600066D280DC33900CE39F6 /* GetDataFromVKApi.swift in Sources */,
 				16BEB5FB278365DB00DD085E /* AppDelegate.swift in Sources */,
 				160537DD279EFD3100AC37BE /* PhotosCollectionViewCell.swift in Sources */,
 				164175BB27AFCEF8002C62A8 /* LoadingView.swift in Sources */,
 				160C311D27A678F7002B24E2 /* FriendsListTableViewCell.swift in Sources */,
+				1600066A280C491100CE39F6 /* AuthVKViewController.swift in Sources */,
 				160C312227A6B6C3002B24E2 /* ProfileViewController.swift in Sources */,
 				169318AB27944B310071AB22 /* FriendsTableViewController.swift in Sources */,
 				164175B527AFB9BA002C62A8 /* NewsTableViewController.swift in Sources */,
@@ -278,6 +297,7 @@
 				160537E227A052BA00AC37BE /* UserGroupTableViewController.swift in Sources */,
 				160537CE279DB8F900AC37BE /* User.swift in Sources */,
 				16BEB5FD278365DB00DD085E /* SceneDelegate.swift in Sources */,
+				16000668280C3F2D00CE39F6 /* Session.swift in Sources */,
 				160537D8279EE45E00AC37BE /* PhotosCollectionViewController.swift in Sources */,
 				164175B727AFBAF1002C62A8 /* NewsTableViewCell.swift in Sources */,
 				164175BD27AFD022002C62A8 /* test.swift in Sources */,

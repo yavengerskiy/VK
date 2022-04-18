@@ -14,12 +14,19 @@ class FriendsTableViewController: UITableViewController {
     private var namesListModifed: [String] = []
     private var letersOfNames: [String] = []
     
-    
+    let userList = DataManager.shared.createTempUsers()
     var currentUser: User!
     
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUser = userList[5]
+        print(currentUser.login)
+        GetDataFromVKApi().getData(.getFriends)
+        GetDataFromVKApi().getData(.getGroups)
+        GetDataFromVKApi().getData(.getAllPhotos)
+        GetDataFromVKApi().getData(.searchGroups)
+
         setup()
     }
 
