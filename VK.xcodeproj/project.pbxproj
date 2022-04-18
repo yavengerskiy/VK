@@ -88,6 +88,7 @@
 		1600066B280DC30D00CE39F6 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				16000667280C3F2D00CE39F6 /* Session.swift */,
 				1600066C280DC33900CE39F6 /* GetDataFromVKApi.swift */,
 			);
 			path = NetworkManager;
@@ -108,7 +109,6 @@
 				160537CD279DB8F900AC37BE /* User.swift */,
 				160537CF279DB90A00AC37BE /* Group.swift */,
 				164175B127AFB87B002C62A8 /* PostNews.swift */,
-				16000667280C3F2D00CE39F6 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
