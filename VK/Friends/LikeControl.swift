@@ -18,7 +18,7 @@ import UIKit
     var countLikes = 0
     var userLiked = false
     
-    @IBInspectable var colorNoLike: UIColor = UIColor.white {
+    @IBInspectable var colorNoLike: UIColor = UIColor.blue {
         didSet {
             likeImgView.tintColor = colorNoLike
             labelLikes.textColor = colorNoLike
@@ -48,6 +48,8 @@ import UIKit
 
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let original = self.likeImgView.transform
+        
+        // Анимация для сердечка
         UIView.animate(withDuration: 0.1, delay: 0, options: [ .autoreverse], animations: {
             self.likeImgView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }, completion: { _ in
